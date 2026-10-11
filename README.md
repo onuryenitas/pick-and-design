@@ -18,19 +18,87 @@ Version 1 covers websites, landing pages, web apps and dashboards, including res
 
 ## Install
 
-Clone this repository, then copy the complete skill folder into your Codex skills directory:
+One shared design workflow, with separate setup instructions for each tool.
+
+| Codex | Claude Code | Claude app |
+| --- | --- | --- |
+| [Install in Codex](#codex) | [Install in Claude Code](#claude-code) | [Download Claude ZIP](https://github.com/onuryenitas/pick-and-design/raw/refs/heads/main/pick-and-design-claude.zip) |
+| Invoke `$pick-and-design` | Invoke `/pick-and-design` | Enable in Customize > Skills |
+
+### Codex
+
+Send this message to Codex:
+
+```text
+Install the skill from https://github.com/onuryenitas/pick-and-design,
+using the skills/pick-and-design folder.
+```
+
+The complete folder belongs at `~/.codex/skills/pick-and-design/` (or `$CODEX_HOME/skills/pick-and-design/` for a custom Codex home). Start a new turn after installation; reload skill discovery if needed.
+
+Then try:
+
+```text
+$pick-and-design Research references for my product, propose three web
+UI directions, and maintain a design system for the direction I choose.
+```
+
+### Claude Code
+
+For a first installation, run these commands in a terminal on macOS/Linux or a compatible shell. They stop if a skill already exists at the destination.
 
 ```sh
 git clone https://github.com/onuryenitas/pick-and-design.git
-mkdir -p ~/.codex/skills
-cp -R pick-and-design/skills/pick-and-design ~/.codex/skills/
+mkdir -p ~/.claude/skills
+if [ ! -e ~/.claude/skills/pick-and-design ]; then
+  cp -R pick-and-design/skills/pick-and-design ~/.claude/skills/
+else
+  echo "Already installed. Back up and review the existing skill before updating."
+fi
 ```
 
-For an existing installation, review and back it up before replacing it. Reload your agent's skill discovery if needed. Other agents supporting SKILL.md can use the same complete folder in their documented skill location.
+To share the skill with a single project instead, put the complete folder at `.claude/skills/pick-and-design/` inside that project. Choose one location to avoid duplicate installations.
+
+Then try:
+
+```text
+/pick-and-design Research references for my product, propose three web
+UI directions, and maintain a design system for the direction I choose.
+```
+
+See [Claude Code skill documentation](https://code.claude.com/docs/en/skills).
+
+### Claude app
+
+1. [Download the Claude skill ZIP](https://github.com/onuryenitas/pick-and-design/raw/refs/heads/main/pick-and-design-claude.zip).
+2. Open **Customize > Skills** in Claude, add the ZIP and enable the skill. Code execution must be enabled; availability can depend on workspace settings.
+3. Ask: "Use Pick & Design to research my product's web design references and propose three directions."
+
+Upload this dedicated ZIP, not GitHub's full repository Source code ZIP. It contains:
+
+```text
+pick-and-design/
+  SKILL.md
+  references/
+  modules/
+  LICENSE
+  NOTICE
+  VERSION
+```
+
+The Claude ZIP uses a shorter discovery description for upload compatibility; its design instructions and supporting modules come from the same source. Rebuild it after skill changes with `python3 build-claude-package.py`. The archive preserves the licenses and includes no repository history.
+
+See [Claude custom skill documentation](https://support.claude.com/en/articles/12512198-how-to-create-custom-skills).
+
+### Updates and capabilities
+
+Back up an existing installation before replacing the complete skill folder. Download and replace the Claude ZIP when updating that installation. GitHub changes do not automatically update separately copied or uploaded skills.
+
+Browsing, image generation, filesystem access and code execution depend on the tools available in your agent. Installing this skill does not add those tools. Package structure is checked; the Claude upload and real-project behavior have not yet been tested in a signed-in Claude account.
 
 ## Use
 
-Invoke `$pick-and-design` and describe the product, target users and desired work. The skill also supports automatic discovery by compatible agents.
+Describe your product, target users and desired work in your own language. Use `$pick-and-design` in Codex, `/pick-and-design` in Claude Code, or request Pick & Design in Claude with the skill enabled.
 
 The workflow is: brief, live reference research, UX needs, reviewable directions, user selection, implementation and design-system handoff. Existing approved directions do not require repeated approval.
 
