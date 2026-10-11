@@ -54,3 +54,9 @@ Skill structure, local links and the bundled UX lookup were checked. Full end-to
 ## License
 
 Original package content is MIT licensed. See [LICENSE](LICENSE) and [NOTICE](NOTICE). External source materials retain their own terms.
+
+## Reference-inspired visual worlds
+
+Selected [MengTo Skills](https://github.com/MengTo/Skills) methods are integrated for reference analysis, distinct visual-world directions, precise implementation briefs, interaction evidence, targeted revisions and asset versioning. The [Akilima listing](https://www.akilima.io/skills/mengto/skills/generate-reference-inspired-brand-worlds) points to the same upstream brand-world skill.
+
+See [provenance and adaptations](skills/pick-and-design/references/upstream-sources.md) and [third-party license](THIRD_PARTY_LICENSES/MengTo-Skills-MIT.txt). User constraints and web UI/UX scope take precedence over upstream defaults.
