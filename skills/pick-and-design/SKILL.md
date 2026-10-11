@@ -16,6 +16,12 @@ v1 covers websites, landing pages, web applications and dashboards, including re
 - UX review or flow design: read [UX Principles](modules/ux-principles/GUIDE.md) and only the relevant records from its index. Use these during design as well as review. Distinguish heuristics, normative accessibility criteria and observed evidence. Never claim conformance from screenshots alone.
 - Motion: classify what can be built with available code/tools and what needs an external asset. Own the work you can perform; request only the missing dependency.
 
+## Visual-world and reference-craft modules
+
+- For visual-world alternatives, image references or asset revisions, read [reference-inspired visual worlds](references/brand-worlds.md).
+- For implementation briefs, interaction extraction or reference-overlap checks, read [reference craft](references/reference-craft.md).
+- These methods adapt selected MengTo Skills material with [pinned provenance](references/upstream-sources.md). They remain subordinate to this skill's web scope, visual constraints, user choices and integrated UX guidance. Optional external skills are not required.
+
 ## Live research and decisions
 
 The registry is a starting pool, not learned visual memory or proof of current access. For a new direction, browse relevant sources during that task. Use gallery search, sector/product synonyms and domain-scoped search; follow promising entries to actual sites. Inspect rendered views for visual claims and behavior for interaction claims. Text extraction alone cannot establish visual quality or animation behavior.
